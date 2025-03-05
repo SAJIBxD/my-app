@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import { RiHeart3Line } from "react-icons/ri";
 import { RiHeart3Fill } from "react-icons/ri";
 import "../css/MovieCard.css";
+import { useMovieContext } from "../contexts/MovieContext";
 
 function Video({ video }) {
-  const [liked, setLiked] = useState(false);
+  const {isFavorite, addToFavorites, removeFromFavorites} = useMovieContext();
+  const [liked, setLiked] = useState(isFavorite(video.id));
 
   function handleLike() {
     setLiked(!liked);
+    if (isFavorite(video.id)) {
+      removeFromFavorites(video.id);
+    } else {
+      addToFavorites(video);
+    }
   }
 
   return (
