@@ -1,0 +1,311 @@
+
+.movie-container {
+  position: relative;
+  min-height: 100vh;
+  color: white;
+}
+
+.movie-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.backdrop-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+.movie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  gap: 3rem;
+}
+
+.movie-thumbnail {
+  flex-shrink: 0;
+  width: 300px;
+}
+
+.movie-thumbnail img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.movie-details {
+  flex-grow: 1;
+}
+
+.movie-details h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.movie-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.rating {
+  color: #ffd700;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.genre-tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.overview {
+  margin-bottom: 2rem;
+}
+
+.overview h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.overview p {
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.additional-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.value {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.loading, .error, .not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .movie-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .movie-poster {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .movie-details h1 {
+    font-size: 2rem;
+  }
+
+  .movie-meta {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .additional-info {
+    grid-template-columns: 1fr;
+  }
+}
+.movie-container {
+  position: relative;
+  min-height: 100vh;
+  color: white;
+}
+
+.movie-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.backdrop-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+.movie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  gap: 3rem;
+}
+
+
+.movie-poster img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.movie-details {
+  flex-grow: 1;
+}
+
+.movie-details h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.movie-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.rating {
+  color: #ffd700;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.genre-tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.overview {
+  margin-bottom: 2rem;
+}
+
+.overview h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.overview p {
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.additional-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.value {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.loading, .error, .not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .movie-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .movie-poster {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .movie-details h1 {
+    font-size: 2rem;
+  }
+
+  .movie-meta {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .additional-info {
+    grid-template-columns: 1fr;
+  }
+}
