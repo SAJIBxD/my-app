@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Thumbnail from "../components/thumbnail";
 import Video from "../components/video";
-import { searchMovie, getMovies } from "../assets/sevices/api";
+import { searchMovie, getMovies } from "../sevices/api";
 import "../css/Home.css";
 
 function Home() {
