@@ -138,7 +138,7 @@
     padding: 1rem;
   }
 
-  .movie-poster {
+  .movie-thumbnail {
     width: 100%;
     margin: 0 auto;
   }
@@ -195,7 +195,7 @@
 }
 
 
-.movie-poster img {
+.movie-thumbnail img {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -291,8 +291,9 @@
     padding: 1rem;
   }
 
-  .movie-poster {
+  .movie-thumbnail {
     width: 100%;
+    max-width: 400px;
     margin: 0 auto;
   }
 

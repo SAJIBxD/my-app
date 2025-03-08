@@ -5,7 +5,7 @@
 }
 
 .search-form {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto 2rem;
   display: flex;
   gap: 1rem;
@@ -14,7 +14,6 @@
 }
 
 .search-input {
-  min-width: 185px;
   flex: 1;
   padding: 0.75rem 1rem;
   border: none;
