@@ -5,48 +5,40 @@ import { useNavigate } from "react-router-dom";
 import "../css/MovieCard.css";
 import { useMovieContext } from "../contexts/MovieContext";
 
-function Video({ video }) {
+function MovieCard({ movie }) {
   const { isFavorite, addToFavorites, removeFromFavorites } = useMovieContext();
-  const [liked, setLiked] = useState(isFavorite(video.id));
+  const [liked, setLiked] = useState(isFavorite(movie.id));
   const navigate = useNavigate();
 
   function handleLike(e) {
     e.stopPropagation(); // Prevent navigation when clicking the like button
     setLiked(!liked);
-    if (isFavorite(video.id)) {
-      removeFromFavorites(video.id);
-    } else {
-      addToFavorites(video);
-    }
+    {isFavorite(movie.id) ? removeFromFavorites(movie.id) : addToFavorites(movie)};
   }
 
   function handleClick() {
-    navigate(`/movie/${video.id}`);
+    navigate(`/movie/${movie.id}`);
   }
 
   return (
     <div className="movie-card" onClick={handleClick}>
       <div className="movie-poster">
-        <img src={`https://media.themoviedb.org/t/p/w500${video.poster_path}`} alt={video.title} />
+        <img
+          src={`https://media.themoviedb.org/t/p/w500${movie.poster_path}`}
+          alt={movie.title}
+        />
         <div className="movie-overlay">
-          <button 
-            className="favorite-btn" 
-            onClick={handleLike}
-          >
-            {liked ? (
-              <RiHeart3Fill color="red" />
-            ) : (
-              <RiHeart3Line color="red" />
-            )}
+          <button className="favorite-btn" onClick={handleLike}>
+            {liked ? <RiHeart3Fill color="red" /> : <RiHeart3Line color="red" />}
           </button>
         </div>
       </div>
       <div className="movie-info">
-        <h4>{video.title}</h4>
-        <p>{video.release_date.split('-')[0]}</p>
+        <h4>{movie.title}</h4>
+        <p>{movie.release_date.split("-")[0]}</p>
       </div>
     </div>
   );
 }
 
-export default Video;
+export default MovieCard;

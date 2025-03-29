@@ -1,6 +1,5 @@
+import MovieCard from "../components/MovieCard";
 import { useState, useEffect } from "react";
-import Thumbnail from "../components/thumbnail";
-import Video from "../components/video";
 import { searchMovie, getMovies } from "../sevices/api";
 import "../css/Home.css";
 
@@ -25,23 +24,23 @@ function Home() {
     fetchMovies();
   }, []);
 
-  const handleSearch = async  (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
-    if (!search.trim()) return
-    if (loading) return
+    if (!search.trim()) return;
+    if (loading) return;
 
-    setLoading(true)
+    setLoading(true);
     try {
       const searchResult = await searchMovie(search);
       setMovies(searchResult);
-      setError(null); 
-    }catch (error) {
+      setError(null);
+    } catch (error) {
       console.log(error);
-      setError("Failed to search ...");
-    }finally{
-      setLoading(false)
-    } 
-  }
+      setError("Failed to search...");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -65,10 +64,11 @@ function Home() {
           <div className="error-message">{error}</div>
         ) : (
           <div className="movies-grid">
-            {movies.map((video) =>
-            video.title.toLowerCase().includes(search.toLowerCase()) && (
-              <Video key={video.id} video={video} />
-            )
+            {movies.map(
+              (movie) =>
+                movie.title.toLowerCase().includes(search.toLowerCase()) && (
+                  <MovieCard key={movie.id} movie={movie} />
+                )
             )}
           </div>
         )}
